@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formdetail">
+    <head>
+        <title>Form Usage</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <link href="main.css" rel="stylesheet"> -->
+        <style>
+            #heading{
+                background-color:darkblue;color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" ng-init="">
+            <h1 id="heading">PERSONAL INFORMATION</h1>
+           <div class="formbox" ng-controller="formDetailCtrl">
+            <form>
+                First Name: <input 
+                type="text" 
+                id="firstname"
+                class="form-control"
+                ng-model="formModel.firstname"/>
+                Last Name: <input 
+                type="text" 
+                id="lastname"
+                class="form-control"
+                ng-model="formModel.lastname"/>
+                Password: <input 
+                type="password" 
+                id="password"
+                class="form-control"
+                ng-model="formModel.password"/>
+                Please select:
+                <input 
+                type="checkbox" 
+                name="vehicle" 
+                class="form-control" 
+                ng-model="formModel.vehicle"
+                value="Bike"> I have a bike<br>
+                <input 
+                type="checkbox" 
+                name="vehicle" 
+                value="Car" 
+                class="form-control" 
+                ng-model="formModel.vehicle"> I have a car<br>
+                <input 
+                ng-click="onSubmit()"
+                type="submit" 
+                value="Submit"
+                class="form-control" 
+                >
+            </form>
+            <pre>{{ formModel | json}}</pre>
+           </div>
+          
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="main.js" ></script>
+    </body>
+</html>
+<!--We leaned about creating a new file and add it to script.
+Then we create a module in it which can have multiple controllers.
+Multiple modules can also exist.
+We create a module with scope and link a scopevariable.
+We can bind fields with that scopevariable and they would all be linked like
+formModule.password and we can see the binding happening using pre tags
+We can use filters with pre tag - there exist inbuilt filters and 
+we can also create our own
+We learned ng-click directive and create another controller func for it and submit!-->

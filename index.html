@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+    <head>
+        <title>Data binding</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" ng-init="count=1;textvalue='hi'">
+            <h1>{{'code'}}</h1>
+            <h1>{{1+2}}</h1>
+            <h1>{{count}}</h1>
+            <h1>{{textvalue}}</h1>
+            <h1>{{boolvalue}}</h1>
+            
+            <input 
+            type="text" 
+            class="form-control"
+            ng-model="textvalue"
+           />
+            <input type="checkbox" class="form-control" ng-model="boolvalue"/>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </body>
+</html>
+<!--all directives start with ng
+    so we learnt about ng-app,ng-model and ng-init and two ways we can bind data values wigth some action i.e.
+     initialize it using ng-init or bind it to an action using ng-model
+    But it is not necessary to initialize..-->
